@@ -1,0 +1,14 @@
+{
+  "name": "entypo-optimized",
+  "version": "0.1.0",
+  "description": "Quick set of build scripts for optimizing and spriting Entypo pictograms",
+  "scripts": {
+    "build": "rm -rf ./dist && svgo --config=svgo.yml -f ./src -o ./dist/icons && svg-sprite -s --svg-xmldecl=false --shape-id-generator=\"entypo-%s\" --dest=dist ./dist/icons/*.svg && mv ./dist/symbol/svg/sprite.css.svg ./dist/sprite.svg && rm -rf ./dist/symbol"
+  },
+  "author": "",
+  "license": "CC-BY-SA-4.0",
+  "devDependencies": {
+    "svg-sprite": "^1.3.6",
+    "svgo": "^0.7.0"
+  }
+}
